@@ -2,37 +2,37 @@ const ADD = 'amount/ADD';
 const TAKE = 'amount/TAKE';
 const CLEAR = 'amount/CLEAR';
 
-type AddAmountAction = {
+type AddAction = {
   type: typeof ADD,
   value: number
 }
 
-const add = (value: number): AddAmountAction => ({
+const add = (value: number): AddAction => ({
   type: ADD,
   value
 });
 
-type TakeAmountAction = {
+type TakeAction = {
   type: typeof TAKE,
   value: number
 }
 
-const take = (value: number): TakeAmountAction => ({
+const take = (value: number): TakeAction => ({
   type: TAKE,
   value
 });
 
-type ClearAmountAction = {
+type ClearAction = {
   type: typeof CLEAR
 }
 
-const clear = (): ClearAmountAction => ({
+const clear = (): ClearAction => ({
   type: CLEAR
 });
 
-type Action = AddAmountAction | TakeAmountAction | ClearAmountAction
+type Action = AddAction | TakeAction | ClearAction;
 
-const amountReducer = (amount = 0, action: Action) => {
+const reducer = (amount = 0, action: Action) => {
   switch (action.type) {
     case ADD:
       return amount + action.value;
@@ -51,4 +51,4 @@ export const actions = {
   clear
 }
 
-export default amountReducer;
+export default reducer;
