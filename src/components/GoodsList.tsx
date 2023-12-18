@@ -5,6 +5,7 @@ import { actions } from '../features/goods';
 
 export const GoodsList = () => {
   const [newGood, setNewGood] = useState('');
+
   const goods = useAppSelector(state => state.goods);
   const dispatch = useDispatch();
 

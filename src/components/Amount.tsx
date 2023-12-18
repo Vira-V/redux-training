@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../app/store';
 import { useDispatch } from 'react-redux';
 import { actions } from '../features/amount';
+import { useAppSelector } from '../app/hooks';
 
 export const Amount = () => {
-  const amount = useSelector((state: RootState) => state.amount);
+  const amount = useAppSelector((state) => state.amount);
   const dispatch = useDispatch();
 
   const take = (value: number) => {
